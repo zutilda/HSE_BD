@@ -11,3 +11,7 @@ SELECT d.ContainerId, COUNT(d.CargoId) AS CargoCount
 FROM DistributionLog d
 GROUP BY d.ContainerId;
 
+SELECT dl.LogId, dl.CargoId, dl.ContainerId, w.Name AS WarehouseName, w.Location
+FROM DistributionLog dl
+JOIN Warehouse w ON dl.WarehouseId = w.WarehouseId;
+
